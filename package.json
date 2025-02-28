@@ -30,7 +30,7 @@
   },
   "scripts": {
     "prepare": "npm run build",
-    "build": "tsc -p . --verbose",
+    "build": "tsc --build --verbose",
     "clean": "rm -rf lib",
     "watch": "tsc -w -p .",
     "lint": "tslint -p tsconfig.json",
