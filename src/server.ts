@@ -609,9 +609,10 @@ export class Server extends EventEmitter {
     //   encoding +
     //   this.wsdl.xmlnsInEnvelope + '>';
     /*PALLET-TRACK CHANGES*/
+    this.wsdl.xmlnsInEnvelope = '';
     const addiNamespaces = ' xmlns:xsi=' + '"http://www.w3.org/2001/XMLSchema-instance"' + ' xmlns:s=' + '"http://www.w3.org/2001/XMLSchema"';
     let xml = '<?xml version="1.0" encoding="utf-8"?>' +
-        '<soap-env:Envelope xmlns:soap-env="' + envelopeDefinition + '" ' +
+        '<SOAP-ENV:Envelope xmlns:SOAP-ENV="' + envelopeDefinition + '" ' +
         encoding +
         this.wsdl.xmlnsInEnvelope + addiNamespaces + '>';
     /*PALLET-TRACK CHANGES*/
@@ -636,9 +637,9 @@ export class Server extends EventEmitter {
       xml += '<soap:Header>' + headers + '</soap:Header>';
     }
 
-    xml += body ? '<soap-env:Body>' + body + '</soap-env:Body>' : '<soap:Body/>';
+    xml += body ? '<SOAP-ENV:Body>' + body + '</SOAP-ENV:Body>' : '<SOAP-ENV:Body/>';
 
-    xml += '</soap-env:Envelope>';
+    xml += '</SOAP-ENV:Envelope>';
     return xml;
   }
 
