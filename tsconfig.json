@@ -9,6 +9,7 @@
     "declaration": true,
     "stripInternal": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
   },
   "include": [
     "src/**/*"
