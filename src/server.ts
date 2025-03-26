@@ -610,9 +610,9 @@ export class Server extends EventEmitter {
     //   this.wsdl.xmlnsInEnvelope + '>';
     /*PALLET-TRACK CHANGES*/
     this.wsdl.xmlnsInEnvelope = '';
-    const addiNamespaces = ' xmlns:xsi=' + '"http://www.w3.org/2001/XMLSchema-instance"' + ' xmlns:s=' + '"http://www.w3.org/2001/XMLSchema"';
-    let xml = '<?xml version="1.0" encoding="utf-8"?>' +
-        '<SOAP-ENV:Envelope xmlns:SOAP-ENV="' + envelopeDefinition + '" ' +
+    const addiNamespaces = 'xmlns:xsi=' + '\'http://www.w3.org/2001/XMLSchema-instance\'' + ' xmlns:s=' + '\'http://www.w3.org/2001/XMLSchema\'';
+    let xml = '<?xml version="1.0" encoding="UTF-8" ?>' +
+        '<SOAP-ENV:Envelope xmlns:SOAP-ENV=\'' + envelopeDefinition + '\' ' +
         encoding +
         this.wsdl.xmlnsInEnvelope + addiNamespaces + '>';
     /*PALLET-TRACK CHANGES*/
