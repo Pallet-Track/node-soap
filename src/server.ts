@@ -636,7 +636,10 @@ export class Server extends EventEmitter {
     if (headers !== '') {
       xml += '<soap:Header>' + headers + '</soap:Header>';
     }
-
+    if (this.wsdl.options.wsdl_headers && typeof this.wsdl.options.wsdl_headers === 'object') {
+        const headerXml = this.wsdl.objectToXML(this.wsdl.options.wsdl_headers, null, '', 'soap');
+        xml += '<soap:Header>' + headerXml + '</soap:Header>';
+    }
     xml += body ? '<SOAP-ENV:Body>' + body + '</SOAP-ENV:Body>' : '<SOAP-ENV:Body/>';
 
     xml += '</SOAP-ENV:Envelope>';
